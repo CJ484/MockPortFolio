@@ -1,6 +1,11 @@
 @import './variables.scss';
 
 .App {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: $light-background-color;
     display: flex;
     font-family: $default-font;
 }
