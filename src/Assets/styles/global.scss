@@ -3,10 +3,15 @@
 .App {
     width: 100vw;
     height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: $light-background-color;
-    display: flex;
     font-family: $default-font;
     overflow: hidden;
+    @media (max-width: $mobile-breakpoint) {
+        align-items: flex-start;
+        overflow: auto;
+        width: 100%;
+    }
 }
