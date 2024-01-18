@@ -1,0 +1,16 @@
+@import './variables.scss';
+.portfolioPageMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 $spacing2;
+    .slideShowMobile_image {
+        max-width: 328px;
+    }
+    .navButton {
+        align-self: center;
+        margin: 1.875rem 0;
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
