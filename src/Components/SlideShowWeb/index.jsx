@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import portfolioImagesWeb from "../../Assets/images/pictures/illustrationWeb/index.js";
 import { navLeft, navRight } from "../../Assets/images/symbols/index.js";
+import "../../Assets/styles/portfolioWeb.scss";
+
 
 const SlideShowWeb = () => {
   const scrollContainerRef = useRef(null);
@@ -64,7 +66,7 @@ const SlideShowWeb = () => {
   };
 
   return (
-    <>
+    <div className="portfolioPageWeb">
       {scrollPositionStart ? null : (
         <img
           className="slideShowButton left"
@@ -97,7 +99,7 @@ const SlideShowWeb = () => {
           onMouseUp={mouseRelease}
         />
       )}
-    </>
+    </div>
   );
 };
 
