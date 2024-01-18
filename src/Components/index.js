@@ -1,3 +1,3 @@
-import Languagelist from "./LanguageList";
+import SlideShowWeb from "./SlideShowWeb";
 
-export { Languagelist }
+export { SlideShowWeb };
