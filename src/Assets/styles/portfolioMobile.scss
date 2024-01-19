@@ -13,4 +13,7 @@
         max-width: 40px;
         max-height: 40px;
     }
+    @media (min-width: 361px) {
+        display: none;
+    }
 }
