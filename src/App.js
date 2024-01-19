@@ -1,10 +1,18 @@
-import './App.styles.scss';
+import {Home, AboutMe, Contact, Portfolio} from './pages';
+import './Assets/styles/global.scss';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+// TODO: Add a navbar
+// TODO: Add a Menu
+// TODO: add react router
 
 function App() {
   return (
     <div className="App">
-      <h1>New React App Template</h1>
+      {/* <Home /> */}
+      {/* <AboutMe /> */}
+      <Contact />
+      {/* <Portfolio /> */}
     </div>
   );
 }
