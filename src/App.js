@@ -1,4 +1,5 @@
 import {Home, AboutMe, Contact, Portfolio} from './pages';
+import { NavDesktop, NavMobile } from './Components/Nav';
 import './Assets/styles/global.scss';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -9,9 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <div className="App">
+      <NavDesktop />
       {/* <Home /> */}
       {/* <AboutMe /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <Portfolio /> */}
     </div>
   );
