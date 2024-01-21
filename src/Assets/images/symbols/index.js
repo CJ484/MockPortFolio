@@ -8,5 +8,7 @@ import navRight from './nav_right.svg';
 import navUp from './nav_up.svg';
 import lightUp from './light_Up.svg';
 import lightDown from './light_Down.svg';
+import Sun from './sun.jsx';
+import Moon from './moon.jsx';
 
-export {instagram, twitter, youtube, mail, phone, navLeft, navRight, navUp, lightUp, lightDown};
+export {Sun, Moon, instagram, twitter, youtube, mail, phone, navLeft, navRight, navUp, lightUp, lightDown};
