@@ -9,12 +9,17 @@ const NavDesktop = () => {
   };
 
   const handleSubMenu = () => {
-    document.querySelector(".subMenu").classList.toggle("active");
+    const lastRouteItem = document.querySelector(".route_item:nth-child(4)");
+    lastRouteItem.classList.toggle("topUnderLine");
+    document.querySelector(".subMenu_title").classList.toggle("active");
     document.querySelector(".subMenu_projects").classList.toggle("active");
   };
 
   const activeMenuItem = () => {
-    const navItems = document.querySelectorAll(".nav-item");
+    const navItems = document.querySelectorAll(
+      ".route_item",
+      ".subMenu_projects_item"
+    );
     navItems.forEach((item) => {
       item.addEventListener("click", () => {
         navItems.forEach((item) => item.classList.remove("active"));
@@ -23,32 +28,60 @@ const NavDesktop = () => {
     });
   };
 
+  const subMenuList = {
+    projects: [
+      {
+        name: "All works",
+        path: "/",
+      },
+      {
+        name: "Dwie Siostry",
+        path: "/",
+      },
+      {
+        name: "Przekroj",
+        path: "/",
+      },
+    ],
+  };
+
   return (
     <div className="nav_desktop">
-      <h1 className="underLine"><b>Marta Nosowka</b></h1>
+      <h1 className="nav_desktop_title">
+        <b>Marta Nosowka</b>
+      </h1>
+
       <div className="menu_button underLine" onClick={handleMenu}>
         <h1>Menu</h1>
-        <img className='' src={lightDown} alt="Menu Down" />
+        <img className="" src={lightDown} alt="Menu Down" />
       </div>
+
       <div className="nav_desktop_menu">
-        <div className="underLine">
-            <Link className="nav-item" onClick={activeMenuItem} to="/about">About</Link>
+        <div className="route_item" onClick={activeMenuItem}>
+          <Link to="/about">About</Link>
         </div>
-        <div className="subMenu menu_button underLine" onClick={handleSubMenu}>
-            <h1>Projects</h1>
-            <img  className="" src={lightDown} alt="Menu Down" />
+
+        <div className="subMenu_title menu_button" onClick={handleSubMenu}>
+          <h1>Projects</h1>
+          <img className="" src={lightDown} alt="Menu Down" />
         </div>
+
         <div className="subMenu_projects">
-          <Link className="nav-item" onClick={activeMenuItem} to="/">All works</Link>
-          <Link className="nav-item" onClick={activeMenuItem} to="/">Dwie Siostry</Link>
-          <Link className="nav-item" onClick={activeMenuItem} to="/">Przekroj</Link>
+          {subMenuList.projects.map((item, index) => (
+            <div
+              key={index}
+              className="subMenu_projects_item route_item"
+              onClick={activeMenuItem}
+            >
+              <Link to={item.path}>{item.name}</Link>
+            </div>
+          ))}
         </div>
-        <div className="underLine">
-            <Link className="nav-item" onClick={activeMenuItem} to="/contact">Contact</Link>
+
+        <div className="route_item" onClick={activeMenuItem}>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
-
-
     </div>
   );
 };

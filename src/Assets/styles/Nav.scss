@@ -3,11 +3,21 @@
     background-color: #f5f5f7;
     max-width: 173px;
     max-height: 82px;
-    // :nth-child(n+2) {
+    // .underLine {
     //     border-bottom: 0.5px solid $font-color;
     // }
-    .underLine {
-        border-bottom: 0.5px solid $font-color;
+    h1,
+    a {
+        width: 100%;
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.125rem;
+        color: $font-color;
+        text-decoration: none;
+    }
+    b {
+        font-size: 1.5rem;
+        font-weight: 400;
     }
     .menu_button {
         display: flex;
@@ -22,57 +32,56 @@
         }
     }
 
-    h1,
-    a {
-        width: 100%;
-        margin: 0;
-        font-size: 1.125rem;
-        font-weight: 300;
-        color: $font-color;
-        text-decoration: none;
+    .topUnderLine {
+        border-top: 0.5px solid $font-color;
     }
-    b {
-        font-size: 1.5rem;
-        font-weight: 400;
+
+    .nav_desktop_title,
+    .menu_button,
+    .route_item {
+        border-bottom: 0.5px solid $font-color;
     }
+
     .nav_desktop_menu {
         display: none;
         overflow: hidden;
         transition: transform 300ms ease-in-out;
-        :nth-child(4) {
-            border-top: 0.5px solid $font-color;
-        }
         &.active {
             display: block;
             transform-origin: top center;
             animation: growDown 300ms ease-in-out;
         }
-        .nav-item {
-            position: relative;
-            margin-left: 20px;
+        .route_item,
+        .subMenu_projects_item {
+            padding-left: 14px;
+
             &.active {
-                position: relative;
-                font-weight: 400;
-                &::before {
-                    content: "\2022";
-                    font-size: 10px;
-                    position: absolute;
-                    width: 0;
-                    color: $font-color;
-                    background-color: $font-color;
-                    left: -20px;
-                    top: 25%;
+                a {
+                    font-weight: 400;
+                    position: relative;
+                    &::before {
+                        content: "\2022";
+                        font-size: 10px;
+                        position: absolute;
+                        width: 0;
+                        color: $font-color;
+                        background-color: $font-color;
+                        left: -8px;
+                        top: 25%;
+                    }
                 }
             }
         }
+        .subMenu_title {
+            padding-left: 14px;
+        }
         .subMenu_projects {
             display: none;
-            flex-direction: column;
             margin-left: 26px;
+            flex-direction: column;
             transition: transform 300ms ease-in-out;
-            :nth-child(2) {
-                border-top: 0.5px solid $font-color;
-                border-bottom: 0.5px solid $font-color;
+            :last-child {
+                border-bottom: none;
             }
             &.active {
                 display: flex;
