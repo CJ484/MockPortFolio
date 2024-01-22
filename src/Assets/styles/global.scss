@@ -4,14 +4,24 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     background: $light-background-color;
     font-family: $default-font;
-    overflow: hidden;
+    overflow: visible;
     @media (max-width: $mobile-breakpoint) {
         align-items: flex-start;
-        overflow: auto;
+        overflow: hidden;
+        width: 100vw;
+    }
+    .currentPage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
         width: 100%;
+        height: 100%;
+        overflow: auto;
     }
 }
