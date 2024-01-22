@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ThemeSwitch from '../../ThemeSwitch';
 import { lightDown } from "../../../Assets/images/symbols";
 import "../../../Assets/styles/Nav.scss";
 
@@ -26,29 +27,42 @@ const NavDesktop = () => {
         item.classList.add("active");
       });
     });
+
+  };
+
+  const resetMenu = () => {
+    document.querySelectorAll(".route_item").forEach((item) => {
+      item.classList.remove("active");
+    });
+    document.querySelector(".menu_button").classList.remove("active");
+    document.querySelector(".nav_desktop_menu").classList.remove("active");
+    document.querySelector(".subMenu_title").classList.remove("active");
+    document.querySelector(".subMenu_projects").classList.remove("active");
+
   };
 
   const subMenuList = {
     projects: [
       {
         name: "All works",
-        path: "/",
+        path: "/portfolio",
       },
       {
         name: "Dwie Siostry",
-        path: "/",
+        path: "/portfolio",
       },
       {
         name: "Przekroj",
-        path: "/",
+        path: "/portfolio",
       },
     ],
   };
 
   return (
     <div className="nav_desktop">
+      <div>
       <h1 className="nav_desktop_title">
-        <b>Marta Nosowka</b>
+        <Link to="/" onClick={resetMenu}><b>Marta Nosowka</b></Link>
       </h1>
 
       <div className="menu_button underLine" onClick={handleMenu}>
@@ -57,8 +71,8 @@ const NavDesktop = () => {
       </div>
 
       <div className="nav_desktop_menu">
-        <div className="route_item" onClick={activeMenuItem}>
-          <Link to="/about">About</Link>
+        <div className="route_item" >
+          <Link to="/about" onClick={activeMenuItem}>About</Link>
         </div>
 
         <div className="subMenu_title menu_button" onClick={handleSubMenu}>
@@ -71,17 +85,20 @@ const NavDesktop = () => {
             <div
               key={index}
               className="subMenu_projects_item route_item"
-              onClick={activeMenuItem}
+
             >
-              <Link to={item.path}>{item.name}</Link>
+              <Link onClick={activeMenuItem} to={item.path}>{item.name}</Link>
             </div>
           ))}
         </div>
 
-        <div className="route_item" onClick={activeMenuItem}>
-          <Link to="/contact">Contact</Link>
+        <div className="route_item" >
+          <Link onClick={activeMenuItem} to="/contact">Contact</Link>
         </div>
       </div>
+
+      </div>
+      <ThemeSwitch />
     </div>
   );
 };
