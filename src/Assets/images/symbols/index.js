@@ -10,5 +10,7 @@ import lightUp from './light_Up.svg';
 import lightDown from './light_Down.svg';
 import Sun from './sun.jsx';
 import Moon from './moon.jsx';
+import menuOpen from './menu_open.svg';
+import menuClose from './menu_closed.svg';
 
-export {Sun, Moon, instagram, twitter, youtube, mail, phone, navLeft, navRight, navUp, lightUp, lightDown};
+export {Sun, Moon, instagram, twitter, youtube, mail, phone, navLeft, navRight, navUp, lightUp, lightDown, menuClose, menuOpen};
