@@ -1,13 +1,12 @@
 @import "./variables.scss";
 .nav_desktop {
+    z-index: 2;
     background-color: #f5f5f7;
     max-width: 173px;
     max-height: 82px;
-    // .underLine {
-    //     border-bottom: 0.5px solid $font-color;
-    // }
     h1,
     a {
+        cursor: pointer;
         width: 100%;
         margin: 0;
         font-weight: 300;
