@@ -1,5 +1,5 @@
 import {navUp} from '../../Assets/images/symbols/'
-import '../../Assets/styles/portfolioMobile.scss';
+import '../../Assets/styles/pages/portfolioMobile.scss';
 const SlideShowMoile = ({photos}) => {
 
     const backToTop = () => {

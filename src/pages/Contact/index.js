@@ -6,7 +6,7 @@ import {
   Phone,
 } from "../../Assets/images/symbols";
 import smallAvatar from "../../Assets/images/pictures/small_Avatar.jpg";
-import "../../Assets/styles/contact.scss";
+import "../../Assets/styles/pages/contact.scss";
 const Contact = ({theme}) => {
   return (
     <>

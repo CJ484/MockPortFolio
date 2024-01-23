@@ -1,6 +1,6 @@
 import smallAvatar from "../../Assets/images/pictures/small_Avatar.jpg";
 import { instagram, twitter, youtube } from "../../Assets/images/symbols/";
-import "../../Assets/styles/aboutMe.scss";
+import "../../Assets/styles/pages/aboutMe.scss";
 
 const AboutMe = () => {
   return (

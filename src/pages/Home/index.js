@@ -1,5 +1,5 @@
 import avatar from '../../Assets/images/pictures/Avatar.jpg'
-import '../../Assets/styles/Home.scss';
+import '../../Assets/styles/pages/Home.scss';
 
 const Home = () => {
   return (

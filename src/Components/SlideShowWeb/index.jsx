@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { navLeft, navRight } from "../../Assets/images/symbols/index.js";
-import "../../Assets/styles/portfolioWeb.scss";
+import "../../Assets/styles/pages/portfolioWeb.scss";
 
 
 const SlideShowWeb = ({photos}) => {
