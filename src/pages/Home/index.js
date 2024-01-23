@@ -3,7 +3,7 @@ import '../../Assets/styles/Home.scss';
 
 const Home = () => {
   return (
-    <div className='homePage page'>
+    <div className='homePage'>
       <img className="avatarImg" src={avatar} alt="avatar" />
       <div className='header'>
         <h1><b>Portfolio</b></h1>
