@@ -10,7 +10,7 @@ import "../../Assets/styles/contact.scss";
 const Contact = () => {
   return (
     <>
-      <div className="contactPage">
+      <div className="contactPage page">
         <img className="avatarImg" src={smallAvatar} alt="smallAvatar" />
         <div>
           <h1 className="contact_header">Contact</h1>

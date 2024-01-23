@@ -8,7 +8,7 @@ const SlideShowMoile = () => {
     }
 
     return (
-        <div id='portfolio' className="portfolioPageMobile">
+        <div id='portfolio' className="portfolioPageMobile page">
         {portfolioImagesMobile.map((image, index) => {
             return (
                     <img

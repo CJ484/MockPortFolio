@@ -66,7 +66,7 @@ const SlideShowWeb = () => {
   };
 
   return (
-    <div className="portfolioPageWeb">
+    <div className="portfolioPageWeb page">
       {scrollPositionStart ? null : (
         <img
           className="slideShowButton left"

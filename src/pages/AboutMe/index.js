@@ -5,7 +5,7 @@ import "../../Assets/styles/aboutMe.scss";
 const AboutMe = () => {
   return (
     <>
-      <div className="aboutMePageWeb">
+      <div className="aboutMePageWeb page">
         <img className="avatar" src={smallAvatar} alt="smallAvatar" />
         <div className="aboutMePage_content">
           <div className="aboutMePage_text">
