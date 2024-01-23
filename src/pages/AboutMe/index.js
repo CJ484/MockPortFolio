@@ -20,7 +20,7 @@ const AboutMe = () => {
             </p>
             <p>
               <b>
-                See <a href="/">my Porfolio</a>!
+                See <a id="socialLink" href="/">my Porfolio</a>!
               </b>
             </p>
 
@@ -64,7 +64,7 @@ const AboutMe = () => {
             </p>
             <p>
               <b>
-                See <a href="/">my Porfolio</a>!
+                See <a id="socialLink" href="/portfolio">my Porfolio</a>!
               </b>
             </p>
 
