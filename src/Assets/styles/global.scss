@@ -18,11 +18,12 @@
         background: $dark-background-color;
         color: $dark-primary-color;
         .nav_desktop,
-        .nav_Mobile {
+        .nav_Mobile,
+        .overlay-content {
             background: $dark-background-color;
             color: $dark-primary-color;
             * {
-                color: $dark-primary-color;
+                color: $dark-primary-color !important;
                 border-color: $dark-primary-color;
                 &::before {
                     background-color: $dark-primary-color !important;
