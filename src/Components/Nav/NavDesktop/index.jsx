@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import ThemeSwitch from '../../ThemeSwitch';
 import { LightDown } from "../../../Assets/images/symbols";
-import "../../../Assets/styles/Nav.scss";
+import "../../../Assets/styles/components/Nav.scss";
 
 const NavDesktop = ({theme, setTheme}) => {
   const currentPath = useLocation().pathname;

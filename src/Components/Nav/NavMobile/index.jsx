@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ThemeSwitch from "../../ThemeSwitch";
 import { twitter, instagram, youtube } from "../../../Assets/images/symbols";
 import { MenuClose, MenuOpen } from "../../../Assets/images/symbols";
-import "../../../Assets/styles/mobileMenu.scss";
+import "../../../Assets/styles/components/mobileMenu.scss";
 
 const NavMobile = ({theme, setTheme}) => {
   const activeMenuItem = () => {

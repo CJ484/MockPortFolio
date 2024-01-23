@@ -1,7 +1,6 @@
 import {Sun, Moon } from '../../Assets/images/symbols';
-import '../../Assets/styles/ThemeSwitch.scss'
 import React from 'react';
-import '../../Assets/styles/ThemeSwitch.scss';
+import '../../Assets/styles/components/ThemeSwitch.scss';
 const ThemeSwitch = ({theme, setTheme}) => {
 
   const toggleTheme = () => {
