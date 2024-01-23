@@ -22,6 +22,9 @@
         .overlay-content {
             background: $dark-background-color;
             color: $dark-primary-color;
+            .overlay-content__subMenu_item:first-child {
+                border-color: $dark-primary-color;
+            }
             * {
                 color: $dark-primary-color !important;
                 border-color: $dark-primary-color;
