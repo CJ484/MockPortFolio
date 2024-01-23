@@ -3,6 +3,11 @@ const MenuOpen = ({ theme }) => {
   const darkTheme = "#E6EBF0";
   const color = theme === "light" ? lightTheme : darkTheme;
 
+  const toggleMenu = () => {
+    const overlay = document.querySelector(".overlay-content");
+    overlay.classList.toggle("active");
+  };
+
   return (
     <svg
       width="24"
@@ -10,6 +15,7 @@ const MenuOpen = ({ theme }) => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={toggleMenu}
     >
       <path
         d="M18 6L6 18"
