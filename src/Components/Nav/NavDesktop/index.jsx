@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ThemeSwitch from '../../ThemeSwitch';
 import { LightDown } from "../../../Assets/images/symbols";
 import "../../../Assets/styles/Nav.scss";
 
 const NavDesktop = ({theme, setTheme}) => {
+  const currentPath = useLocation().pathname;
+
+  const handleDisplayPath = () => {
+    if (currentPath === "/") {
+      return "Marta Nosowka.";
+    } else if (currentPath === "/about") {
+      return <h1>Marta Nosowka. / <b>About</b></h1>;
+    } else if (currentPath === "/portfolio") {
+      return <h1>Marta Nosowka. / Portfolio / <b>All works</b></h1>; 
+    } else if (currentPath === "/contact") {
+      return <h1>Marta Nosowka. / <b>Contact</b></h1>;
+    } else if (currentPath === "/portfolio/DwieSiostry") {
+      return <h1>Marta Nosowka. / Porfolio / <b>Dwie Siostry</b></h1>;
+    } else if (currentPath === "/portfolio/Przekroj") {
+      return <h1>Marta Nosowka. / Portfolio / <b>Przekroj</b></h1>;
+    }
+  };
 
   const handleMenu = () => {
     console.log(theme);
@@ -64,7 +81,7 @@ const NavDesktop = ({theme, setTheme}) => {
     <div className="nav_desktop">
       <div>
       <h1 className="nav_desktop_title">
-        <Link to="/" onClick={resetMenu}><b>Marta Nosowka</b></Link>
+        <Link to="/" onClick={resetMenu}>{handleDisplayPath()}</Link>
       </h1>
 
       <div className="menu_button underLine" onClick={handleMenu}>
