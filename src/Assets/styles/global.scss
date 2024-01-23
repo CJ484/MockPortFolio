@@ -18,14 +18,17 @@
         background: $dark-background-color;
         color: $dark-primary-color;
         .nav_desktop,
-        .navMobile {
+        .nav_Mobile {
             background: $dark-background-color;
             color: $dark-primary-color;
-
             * {
                 color: $dark-primary-color;
                 border-color: $dark-primary-color;
                 &::before {
+                    background-color: $dark-primary-color !important;
+                    color: $dark-primary-color !important;
+                }
+                &::after {
                     background-color: $dark-primary-color !important;
                     color: $dark-primary-color !important;
                 }
