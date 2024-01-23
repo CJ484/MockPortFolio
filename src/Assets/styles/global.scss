@@ -50,6 +50,14 @@
                 color: $dark-primary-color;
             }
         }
+        .imageSlideShow {
+            &::-webkit-scrollbar {
+                border-color: $dark-primary-color;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $dark-primary-color;
+            }
+        }
     }
     .currentPage {
         display: flex;
