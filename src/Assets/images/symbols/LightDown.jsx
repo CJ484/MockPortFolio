@@ -14,8 +14,8 @@ const LightDown = ({ theme }) => {
       <path
         d="M6 10L12 16L18 10"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
