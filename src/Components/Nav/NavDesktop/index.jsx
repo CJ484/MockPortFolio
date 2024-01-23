@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import ThemeSwitch from '../../ThemeSwitch';
-import { lightDown } from "../../../Assets/images/symbols";
+import { LightDown } from "../../../Assets/images/symbols";
 import "../../../Assets/styles/Nav.scss";
 
-const NavDesktop = () => {
+const NavDesktop = ({theme, setTheme}) => {
+
   const handleMenu = () => {
+    console.log(theme);
     document.querySelector(".menu_button").classList.toggle("active");
     document.querySelector(".nav_desktop_menu").classList.toggle("active");
   };
@@ -67,7 +69,7 @@ const NavDesktop = () => {
 
       <div className="menu_button underLine" onClick={handleMenu}>
         <h1>Menu</h1>
-        <img className="" src={lightDown} alt="Menu Down" />
+        <LightDown theme={theme}/>
       </div>
 
       <div className="nav_desktop_menu">
@@ -77,7 +79,7 @@ const NavDesktop = () => {
 
         <div className="subMenu_title menu_button" onClick={handleSubMenu}>
           <h1>Projects</h1>
-          <img className="" src={lightDown} alt="Menu Down" />
+          <LightDown theme={theme}/>
         </div>
 
         <div className="subMenu_projects">
@@ -98,7 +100,7 @@ const NavDesktop = () => {
       </div>
 
       </div>
-      <ThemeSwitch />
+      <ThemeSwitch theme={theme} setTheme={setTheme}/>
     </div>
   );
 };
