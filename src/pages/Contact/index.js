@@ -2,12 +2,12 @@ import {
   instagram,
   twitter,
   youtube,
-  mail,
-  phone,
+  Mail,
+  Phone,
 } from "../../Assets/images/symbols";
 import smallAvatar from "../../Assets/images/pictures/small_Avatar.jpg";
 import "../../Assets/styles/contact.scss";
-const Contact = () => {
+const Contact = ({theme}) => {
   return (
     <>
       <div className="contactPage page">
@@ -16,26 +16,26 @@ const Contact = () => {
           <h1 className="contact_header">Contact</h1>
           <div className="contact_primary">
             <div className="contact_primary_item">
-              <img src={mail} alt="email" />
+              <Mail theme={theme}/>
               <p>martanosowska@gmail.com</p>
             </div>
             <div className="contact_primary_item">
-              <img src={phone} alt="phone" />
+              <Phone theme={theme}/>
               <p>+48 123 123 123</p>
             </div>
           </div>
           <div className="contact_social">
             <div className="contact_social_item">
               <img src={instagram} alt="instagram" />
-              <p>@ma.noska</p>
+              <p id="socialLink">@ma.noska</p>
             </div>
             <div className="contact_social_item">
               <img src={twitter} alt="twitter" />
-              <p>@ma.noska</p>
+              <p id="socialLink">@ma.noska</p>
             </div>
             <div className="contact_social_item">
               <img src={youtube} alt="youtube" />
-              <p>@rysunki_noska</p>
+              <p id="socialLink">@rysunki_noska</p>
             </div>
           </div>
         </div>
@@ -48,11 +48,11 @@ const Contact = () => {
         </div>
         <div className="contactMobile_primary">
           <div className="contactMobile_primary_item">
-            <img src={mail} alt="email" />
+            <Mail />
             <p>martanosowska@gmail.com</p>
           </div>
           <div className="contactMobile_primary_item">
-            <img src={phone} alt="phone" />
+            <Phone />
             <p>+48 123 123 123</p>
           </div>
         </div>
