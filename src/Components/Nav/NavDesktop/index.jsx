@@ -8,7 +8,7 @@ const NavDesktop = ({theme, setTheme}) => {
 
   const handleDisplayPath = () => {
     if (currentPath === "/") {
-      return "Marta Nosowka.";
+      return <h1><b>Marta Nosowka.</b></h1>;
     } else if (currentPath === "/about") {
       return <h1>Marta Nosowka. / <b>About</b></h1>;
     } else if (currentPath === "/portfolio") {
