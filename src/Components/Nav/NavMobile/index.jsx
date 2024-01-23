@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import ThemeSwitch from "../../ThemeSwitch";
 import { twitter, instagram, youtube } from "../../../Assets/images/symbols";
-import { menuClose, menuOpen } from "../../../Assets/images/symbols";
+import { MenuClose, MenuOpen } from "../../../Assets/images/symbols";
 import "../../../Assets/styles/mobileMenu.scss";
 
-const NavMobile = () => {
+const NavMobile = ({theme}) => {
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(
       ".route_item"
@@ -36,7 +36,7 @@ const NavMobile = () => {
       <div className="overlay-content">
         <div className="overlay-content_header">
           <ThemeSwitch />
-          <img onClick={toggleMenu} src={menuOpen} alt="menu" />
+          <MenuOpen theme={theme} onClick={toggleMenu} />
         </div>
         <div className="overlay-content__menu">
           <h1 className="overlay-content_title">Menu</h1>
@@ -88,7 +88,7 @@ const NavMobile = () => {
       </div>
       <div className="nav_Mobile">
         <h1>Marta Nosowka.</h1>
-        <img onClick={toggleMenu} src={menuClose} alt="menu" />
+        <MenuClose theme={theme} onClick={toggleMenu} />
       </div>
     </>
   );
