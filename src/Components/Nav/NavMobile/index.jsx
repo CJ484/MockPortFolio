@@ -4,7 +4,7 @@ import { twitter, instagram, youtube } from "../../../Assets/images/symbols";
 import { MenuClose, MenuOpen } from "../../../Assets/images/symbols";
 import "../../../Assets/styles/mobileMenu.scss";
 
-const NavMobile = ({theme}) => {
+const NavMobile = ({theme, setTheme}) => {
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(
       ".route_item"
@@ -16,11 +16,6 @@ const NavMobile = ({theme}) => {
       });
     });
     document.querySelector(".overlay-content").classList.remove("active");
-  };
-
-  const toggleMenu = () => {
-    const overlay = document.querySelector(".overlay-content");
-    overlay.classList.toggle("active");
   };
 
   const toggleSubMenu = () => {
@@ -35,8 +30,8 @@ const NavMobile = ({theme}) => {
     <>
       <div className="overlay-content">
         <div className="overlay-content_header">
-          <ThemeSwitch />
-          <MenuOpen theme={theme} onClick={toggleMenu} />
+          <ThemeSwitch theme={theme} setTheme={setTheme}/>
+          <MenuOpen theme={theme} />
         </div>
         <div className="overlay-content__menu">
           <h1 className="overlay-content_title">Menu</h1>
@@ -88,7 +83,7 @@ const NavMobile = ({theme}) => {
       </div>
       <div className="nav_Mobile">
         <h1>Marta Nosowka.</h1>
-        <MenuClose theme={theme} onClick={toggleMenu} />
+        <MenuClose theme={theme} />
       </div>
     </>
   );
