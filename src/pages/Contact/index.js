@@ -48,11 +48,11 @@ const Contact = ({theme}) => {
         </div>
         <div className="contactMobile_primary">
           <div className="contactMobile_primary_item">
-            <Mail />
+            <Mail theme={theme}/>
             <p>martanosowska@gmail.com</p>
           </div>
           <div className="contactMobile_primary_item">
-            <Phone />
+            <Phone theme={theme}/>
             <p>+48 123 123 123</p>
           </div>
         </div>
