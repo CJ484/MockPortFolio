@@ -41,7 +41,7 @@ const Contact = ({theme}) => {
         </div>
       </div>
       {/* Mobile version */}
-      <div className="contactPageMobile">
+      <div className="contactPageMobile page">
         <div className="contactMobile_header">
           <img className="avatarImg" src={smallAvatar} alt="smallAvatar" />
           <h1 className="contactMobile_title">Contact</h1>
