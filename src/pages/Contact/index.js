@@ -59,15 +59,15 @@ const Contact = ({theme}) => {
         <div className="contactMobile_social">
           <div className="contactMobile_social_item">
             <img src={instagram} alt="instagram" />
-            <p>@ma.noska</p>
+            <p id="socialLink">@ma.noska</p>
           </div>
           <div className="contactMobile_social_item">
             <img src={twitter} alt="twitter" />
-            <p>@ma.noska</p>
+            <p id="socialLink">@ma.noska</p>
           </div>
           <div className="contactMobile_social_item">
             <img src={youtube} alt="youtube" />
-            <p>@rysunki_noska</p>
+            <p id="socialLink">@rysunki_noska</p>
           </div>
         </div>
       </div>
