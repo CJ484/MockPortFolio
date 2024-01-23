@@ -1,7 +1,6 @@
 import {navUp} from '../../Assets/images/symbols/'
-import portfolioImagesMobile from "../../Assets/images/pictures/illustrationMobile"
 import '../../Assets/styles/portfolioMobile.scss';
-const SlideShowMoile = () => {
+const SlideShowMoile = ({photos}) => {
 
     const backToTop = () => {
         document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});
@@ -9,7 +8,7 @@ const SlideShowMoile = () => {
 
     return (
         <div id='portfolio' className="portfolioPageMobile">
-        {portfolioImagesMobile.map((image, index) => {
+        {photos.map((image, index) => {
             return (
                     <img
                         key={index}

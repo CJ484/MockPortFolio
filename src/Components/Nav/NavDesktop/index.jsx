@@ -51,11 +51,11 @@ const NavDesktop = ({theme, setTheme}) => {
       },
       {
         name: "Dwie Siostry",
-        path: "/portfolio",
+        path: "/portfolio/DwieSiostry",
       },
       {
         name: "Przekroj",
-        path: "/portfolio",
+        path: "/portfolio/Przekroj",
       },
     ],
   };
@@ -78,7 +78,7 @@ const NavDesktop = ({theme, setTheme}) => {
         </div>
 
         <div className="subMenu_title menu_button" onClick={handleSubMenu}>
-          <h1>Projects</h1>
+          <h1>Portfolio</h1>
           <LightDown theme={theme}/>
         </div>
 

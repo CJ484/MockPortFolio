@@ -1,10 +1,10 @@
 import { SlideShowWeb, SlideShowMobile } from "../../Components";
 
-const Portfolio = () => {
+const Portfolio = ({webImages, mobileImages}) => {
   return (
     <>
-      <SlideShowMobile />
-      <SlideShowWeb />
+      <SlideShowMobile photos={mobileImages}/>
+      <SlideShowWeb photos={webImages}/>
     </>
   );
 };

@@ -1,4 +1,14 @@
 import React, { Suspense, useState } from "react";
+import {
+  portfolioImagesWeb,
+  DwieSiostryWeb,
+  PrzekrojWeb,
+} from "./Assets/images/pictures/illustrationWeb";
+import {
+  portfolioImagesMobile,
+  DwieSiostryMobile,
+  PrzekrojMobile,
+} from "./Assets/images/pictures/illustrationMobile";
 import { Route, Routes } from "react-router-dom";
 import { Home, AboutMe, Contact, Portfolio } from "./pages";
 import { Loading, NavDesktop, NavMobile } from "./Components";
@@ -18,12 +28,22 @@ function App() {
     },
     about: {
       path: "/about",
-      element: <AboutMe theme={theme}/>,
+      element: <AboutMe theme={theme} />,
       exact: true,
     },
     portfolio: {
       path: "/portfolio",
-      element: <Portfolio theme={theme} />,
+      element: <Portfolio mobileImages={portfolioImagesMobile} webImages={portfolioImagesWeb} theme={theme} />,
+      exact: true,
+    },
+    DwieSiostry: {
+      path: "/portfolio/DwieSiostry",
+      element: <Portfolio mobileImages={DwieSiostryMobile} webImages={DwieSiostryWeb} theme={theme} />,
+      exact: true,
+    },
+    Przekroj: {
+      path: "/portfolio/Przekroj",
+      element: <Portfolio mobileImages={PrzekrojMobile}  webImages={PrzekrojWeb} theme={theme} />,
       exact: true,
     },
     contact: {
@@ -34,7 +54,7 @@ function App() {
   };
   return (
     <div className="App">
-      <NavDesktop theme={theme} setTheme={setTheme}/>
+      <NavDesktop theme={theme} setTheme={setTheme} />
       <NavMobile theme={theme} setTheme={setTheme} />
 
       <div className="currentPage">

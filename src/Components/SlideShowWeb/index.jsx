@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
-import portfolioImagesWeb from "../../Assets/images/pictures/illustrationWeb/index.js";
 import { navLeft, navRight } from "../../Assets/images/symbols/index.js";
 import "../../Assets/styles/portfolioWeb.scss";
 
 
-const SlideShowWeb = () => {
+const SlideShowWeb = ({photos}) => {
   const scrollContainerRef = useRef(null);
   const [scrollPositionStart, setScrollPositionStart] = useState(true);
   const [scrollPositionEnd, setScrollPositionEnd] = useState(false);
@@ -83,7 +82,7 @@ const SlideShowWeb = () => {
         ref={scrollContainerRef}
         onScroll={handleScroll}
       >
-        {portfolioImagesWeb.map((image, index) => {
+        {photos.map((image, index) => {
           return <img key={index} src={image} alt="Web" />;
         })}
       </div>
