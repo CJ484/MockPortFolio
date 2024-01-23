@@ -14,7 +14,7 @@ const ThemeSwitch = ({theme, setTheme}) => {
     <div className="themeSwitch">
       <Sun theme={theme}/>
       <div className="switch" onClick={toggleTheme}>
-        <input type="checkbox" id="switch" checked={theme === 'light'} />
+        <input type="checkbox" id="switch" checked={theme === 'dark'} />
         <span className="slider round"></span>
       </div>
       <Moon theme={theme} />
