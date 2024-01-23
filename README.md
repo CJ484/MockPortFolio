@@ -13,6 +13,10 @@ https://mockk-portfolio.netlify.app
 
 ![App Screenshot](./assets/Images/Screenshot_1.png)
 ![App Screenshot](./assets/Images/Screenshot_2.png)
+![App Screenshot](./assets/Images/Screenshot_3.png)
+![App Screenshot](./assets/Images/Screenshot_4.png)
+![App Screenshot](./assets/Images/Screenshot_5.png)
+![App Screenshot](./assets/Images/Screenshot_6.png)
 
 
 ## Technologies used
