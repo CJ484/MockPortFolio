@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .App {
     width: 100vw;
@@ -13,6 +13,39 @@
         align-items: flex-start;
         overflow: hidden;
         width: 100vw;
+    }
+    &.darkMode {
+        background: $dark-background-color;
+        color: $dark-primary-color;
+        .nav_desktop,
+        .navMobile {
+            background: $dark-background-color;
+            color: $dark-primary-color;
+
+            * {
+                color: $dark-primary-color;
+                border-color: $dark-primary-color;
+                &::before {
+                    background-color: $dark-primary-color !important;
+                    color: $dark-primary-color !important;
+                }
+            }
+        }
+        .page {
+            #socialLink {
+                color: $link-colors !important;
+            }
+            background: $dark-card-color;
+            color: $dark-primary-color;
+            * {
+                color: $dark-primary-color;
+            }
+        }
+        .homePage {
+            h1 {
+                color: $dark-primary-color;
+            }
+        }
     }
     .currentPage {
         display: flex;

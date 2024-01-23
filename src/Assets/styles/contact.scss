@@ -21,6 +21,7 @@
         margin-right: $spacing1;
         max-width: 114px;
         max-height: 114px;
+        aspect-ratio: 1/1;
     }
 
     .contact_header {
@@ -36,7 +37,7 @@
         }
         .contact_primary_item {
             display: flex;
-            img {
+            svg {
                 margin: 0 $spacing3*2 0 0;
             }
             p {

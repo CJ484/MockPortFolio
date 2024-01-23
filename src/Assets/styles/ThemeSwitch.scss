@@ -2,16 +2,6 @@
 
 .themeSwitch {
     display: flex;
-    &.dark {
-        .switch {
-            .slider {
-                border-color: $dark-primary-color;
-                &:before {
-                    background-color: $dark-primary-color;
-                }
-            }
-        }
-    }
     .switch {
         margin: 0 0.5rem;
         position: relative;
@@ -31,7 +21,7 @@
             right: 0;
             bottom: 0;
             background-color: transparent;
-            border: 1px solid $font-color;
+            border: 1px solid $light-primary-color;
             -webkit-transition: .4s;
             transition: .4s;
             // Round Dial
