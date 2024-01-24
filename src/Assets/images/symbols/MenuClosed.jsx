@@ -4,7 +4,6 @@ const MenuClosed = ({ theme }) => {
   const color = theme === "light" ? lightTheme : darkTheme;
 
   const toggleMenu = () => {
-    console.log("click");
     const overlay = document.querySelector(".overlay-content");
     overlay.classList.toggle("active");
   };
