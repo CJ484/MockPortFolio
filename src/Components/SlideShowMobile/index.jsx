@@ -2,6 +2,8 @@ import {navUp} from '../../Assets/images/symbols/'
 import '../../Assets/styles/pages/portfolioMobile.scss';
 const SlideShowMoile = ({photos}) => {
 
+    // TODO: add breadcrumbs and add a section for all works
+
     const backToTop = () => {
         document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});
     }
