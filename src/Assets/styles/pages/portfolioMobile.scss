@@ -4,6 +4,9 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 $spacing2;
+    z-index: 0;
+    position: absolute;
+    top: 0;
     .slideShowMobile_image {
         max-width: 328px;
     }
