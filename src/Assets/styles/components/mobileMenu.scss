@@ -24,7 +24,7 @@
     .route_item {
         &.active {
             a {
-                font-weight: 400;
+                font-weight: 400 !important;
                 position: relative;
                 &::before {
                     content: "\2022";

@@ -65,10 +65,9 @@ const NavMobile = ({ theme, setTheme }) => {
                 About
               </Link>
             </div>
-            <div className="overlay-content__menu_item">
-              <h1 onClick={toggleSubMenu}>
-                <Link to="/portfolio" onClick={activeMenuItem}>Portfolio</Link>
-                </h1>
+            <div className="overlay-content__menu_item route_item">
+                <Link to="/portfolio" onClick={() => {activeMenuItem(); toggleSubMenu();}}>Portfolio</Link>
+
             </div>
             <div className="overlay-content__subMenu">
               <div className="overlay-content__subMenu_item route_item">
