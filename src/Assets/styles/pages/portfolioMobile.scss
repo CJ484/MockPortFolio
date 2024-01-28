@@ -16,7 +16,7 @@
         max-width: 40px;
         max-height: 40px;
     }
-    @media (min-width: 361px) {
+    @media (min-width: $mobile-breakpoint) {
         display: none;
     }
 }
