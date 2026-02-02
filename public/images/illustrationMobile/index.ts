@@ -7,7 +7,7 @@ import sketch_6 from "./6.png";
 import sketch_7 from "./7.png";
 import sketch_8 from "./8.png";
 
-const portfolioImagesMobile = [
+const portfolioImagesMobile: string[] = [
   sketch_1,
   sketch_2,
   sketch_3,
@@ -18,7 +18,7 @@ const portfolioImagesMobile = [
   sketch_8,
 ];
 
-const DwieSiostryMobile = [sketch_1, sketch_2, sketch_6, sketch_8];
-const PrzekrojMobile = [sketch_3, sketch_4, sketch_5, sketch_7];
+const DwieSiostryMobile: string[] = [sketch_1, sketch_2, sketch_6, sketch_8];
+const PrzekrojMobile: string[] = [sketch_3, sketch_4, sketch_5, sketch_7];
 
 export { portfolioImagesMobile, DwieSiostryMobile, PrzekrojMobile };

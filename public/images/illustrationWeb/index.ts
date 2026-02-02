@@ -7,7 +7,7 @@ import portfolio6 from "./portfolio_6.png";
 import portfolio7 from "./portfolio_7.png";
 import portfolio8 from "./portfolio_8.png";
 
-const portfolioImagesWeb = [
+const portfolioImagesWeb: string[] = [
   portfolio1,
   portfolio2,
   portfolio3,
@@ -18,7 +18,7 @@ const portfolioImagesWeb = [
   portfolio8,
 ];
 
-const DwieSiostryWeb = [portfolio2, portfolio4, portfolio6, portfolio8];
-const PrzekrojWeb = [portfolio1, portfolio3, portfolio5, portfolio7];
+const DwieSiostryWeb: string[] = [portfolio2, portfolio4, portfolio6, portfolio8];
+const PrzekrojWeb: string[] = [portfolio1, portfolio3, portfolio5, portfolio7];
 
 export { portfolioImagesWeb, DwieSiostryWeb, PrzekrojWeb };
