@@ -1,30 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-// Light Theme colors
-$light-primary-color: #004c93;
-$light-card-color: #ffffff;
-$light-background-color: #f5f5f7;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
+:root {
+  /* Font */
+  --default-font: "Lato", sans-serif;
+  --font-color: #004c93;
 
-// Dark Theme colors
+  /* Spacing */
+  --spacing1: 24px;
+  --spacing2: 16px;
+  --spacing3: 4px;
 
-$dark-primary-color: #E6EBF0;
-$dark-card-color: #023869;
-$dark-background-color: #002547;
+  /* Breakpoints */
+  --large-desktop-breakpoint: 1920px;
+  --small-desktop-breakpoint: 1366px;
+  --tablet-breakpoint: 1024px;
+  --mobile-breakpoint: 425px;
 
-// Font
-$default-font: "Lato", sans-serif;
-$font-color: #004c93;
+  /* Light Theme colors */
+  --primary-color: #004c93;
+  --card-color: #ffffff;
+  --background-color: #f5f5f7;
+  --link-colors: #00baa4;
+}
 
-//spacing
-
-$spacing1: 24px;
-$spacing2: 16px;
-$spacing3: 4px;
-
-//breakpoints
-$large-desktop-breakpoint: 1920px;
-$small-desktop-breakpoint: 1366px;
-$tablet-breakpoint: 1024px;
-$mobile-breakpoint: 425px;
-
-$link-colors: #00baa4;
+/* Dark Theme colors */
+:root.darkMode {
+  --primary-color: #e6ebf0;
+  --card-color: #023869;
+  --background-color: #002547;
+  --font-color: #e6ebf0;
+}

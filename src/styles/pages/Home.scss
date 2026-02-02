@@ -1,4 +1,3 @@
-@import "../variables.scss";
 .homePage {
     display: flex;
     width: 100vw;
@@ -20,7 +19,7 @@
         flex-direction: column;
         h1 {
             font-size: 7.813rem;
-            color: $light-primary-color;
+            color: var(--primary-color);
             font-weight: 300;
         }
         b {
