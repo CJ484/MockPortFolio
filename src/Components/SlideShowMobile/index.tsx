@@ -1,8 +1,9 @@
-import { navUp } from "../../Assets/images/symbols/";
-import "../../Assets/styles/pages/portfolioMobile.scss";
-const SlideShowMoile = ({ photos }) => {
+import "@/styles/pages/portfolioMobile.scss";
+
+
+export default function SlideShowMobile({ photos }: { photos: string[] }) {
   const backToTop = () => {
-    document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -19,7 +20,7 @@ const SlideShowMoile = ({ photos }) => {
       })}
       <img
         className="navButton"
-        src={navUp}
+        src="/symbols/nav_up.svg"
         alt="Button to scroll top"
         onClick={backToTop}
       />
@@ -27,4 +28,3 @@ const SlideShowMoile = ({ photos }) => {
   );
 };
 
-export default SlideShowMoile;

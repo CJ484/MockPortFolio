@@ -1,9 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import ThemeSwitch from '../../ThemeSwitch';
-import { LightDown } from "../../../Assets/images/symbols";
-import "../../../Assets/styles/components/Nav.scss";
+import ThemeSwitch from '@/Components/ThemeSwitch';
+import "@/styles/components/Nav.scss";
 
-const NavDesktop = ({theme, setTheme}) => {
+export default function NavDesktop() {
   const currentPath = useLocation().pathname;
 
   const handleDisplayPath = () => {
@@ -23,22 +22,20 @@ const NavDesktop = ({theme, setTheme}) => {
   };
 
   const handleMenu = () => {
-    console.log(theme);
-    document.querySelector(".menu_button").classList.toggle("active");
-    document.querySelector(".nav_desktop_menu").classList.toggle("active");
+    document.querySelector(".menu_button")?.classList.toggle("active");
+    document.querySelector(".nav_desktop_menu")?.classList.toggle("active");
   };
 
   const handleSubMenu = () => {
     const lastRouteItem = document.querySelector(".route_item:nth-child(4)");
-    lastRouteItem.classList.toggle("topUnderLine");
-    document.querySelector(".subMenu_title").classList.toggle("active");
-    document.querySelector(".subMenu_projects").classList.toggle("active");
+    lastRouteItem?.classList.toggle("topUnderLine");
+    document.querySelector(".subMenu_title")?.classList.toggle("active");
+    document.querySelector(".subMenu_projects")?.classList.toggle("active");
   };
 
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(
-      ".route_item",
-      ".subMenu_projects_item"
+      ".route_item, .subMenu_projects_item"
     );
     navItems.forEach((item) => {
       item.addEventListener("click", () => {
@@ -46,18 +43,16 @@ const NavDesktop = ({theme, setTheme}) => {
         item.classList.add("active");
       });
     });
-
   };
 
   const resetMenu = () => {
     document.querySelectorAll(".route_item").forEach((item) => {
       item.classList.remove("active");
     });
-    document.querySelector(".menu_button").classList.remove("active");
-    document.querySelector(".nav_desktop_menu").classList.remove("active");
-    document.querySelector(".subMenu_title").classList.remove("active");
-    document.querySelector(".subMenu_projects").classList.remove("active");
-
+    document.querySelector(".menu_button")?.classList.remove("active");
+    document.querySelector(".nav_desktop_menu")?.classList.remove("active");
+    document.querySelector(".subMenu_title")?.classList.remove("active");
+    document.querySelector(".subMenu_projects")?.classList.remove("active");
   };
 
   const subMenuList = {
@@ -86,7 +81,7 @@ const NavDesktop = ({theme, setTheme}) => {
 
       <div className="menu_button underLine" onClick={handleMenu}>
         <h1>Menu</h1>
-        <LightDown theme={theme}/>
+        <img src="/symbols/LightDown.svg" alt="Toggle menu" />
       </div>
 
       <div className="nav_desktop_menu">
@@ -96,7 +91,7 @@ const NavDesktop = ({theme, setTheme}) => {
 
         <div className="subMenu_title menu_button" onClick={handleSubMenu}>
           <h1>Portfolio</h1>
-          <LightDown theme={theme}/>
+          <img src="/symbols/LightDown.svg" alt="Toggle submenu" />
         </div>
 
         <div className="subMenu_projects">
@@ -117,9 +112,8 @@ const NavDesktop = ({theme, setTheme}) => {
       </div>
 
       </div>
-      <ThemeSwitch theme={theme} setTheme={setTheme}/>
+      <ThemeSwitch />
     </div>
   );
 };
 
-export default NavDesktop;

@@ -1,15 +1,19 @@
 import { useRef, useState } from "react";
-import { navLeft, navRight } from "../../Assets/images/symbols/index.js";
-import "../../Assets/styles/pages/portfolioWeb.scss";
+import "@/styles/pages/portfolioWeb.scss";
 
+interface SlideShowWebProps {
+  photos: string[];
+}
 
-const SlideShowWeb = ({photos}) => {
-  const scrollContainerRef = useRef(null);
+const SlideShowWeb: React.FC<SlideShowWebProps> = ({ photos }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollPositionStart, setScrollPositionStart] = useState(true);
   const [scrollPositionEnd, setScrollPositionEnd] = useState(false);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleScrollPosition = () => {
+    if (!scrollContainerRef.current) return false;
+    
     const currentScrollPosition = Math.round(
       scrollContainerRef.current.scrollLeft
     );
@@ -39,19 +43,21 @@ const SlideShowWeb = ({photos}) => {
     }
   };
 
-  const handleMouseDown = (direction) => {
+  const handleMouseDown = (direction: string) => {
     intervalRef.current = setInterval(() => {
+      if (!scrollContainerRef.current) return;
+      
       if (direction === "left") {
         // Scroll left or right
         if (handleScrollPosition() === "leftSideMaxed") {
-          clearInterval(intervalRef.current);
+          if (intervalRef.current) clearInterval(intervalRef.current);
         } else {
           scrollContainerRef.current.scrollLeft -= 10;
           return;
         }
       } else {
         if (handleScrollPosition() === "rightSideMaxed") {
-          clearInterval(intervalRef.current);
+          if (intervalRef.current) clearInterval(intervalRef.current);
         } else {
           scrollContainerRef.current.scrollLeft += 10;
           return;
@@ -61,7 +67,7 @@ const SlideShowWeb = ({photos}) => {
   };
 
   const mouseRelease = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) clearInterval(intervalRef.current);
   };
 
   return (
@@ -69,9 +75,8 @@ const SlideShowWeb = ({photos}) => {
       {scrollPositionStart ? null : (
         <img
           className="slideShowButton left"
-          value="left"
           id="leftButton"
-          src={navLeft}
+          src="/symbols/nav_left.svg"
           alt="Left button for slideshow"
           onMouseDown={() => handleMouseDown("left")}
           onMouseUp={mouseRelease}
@@ -90,9 +95,8 @@ const SlideShowWeb = ({photos}) => {
       {scrollPositionEnd ? null : (
         <img
           className="slideShowButton right"
-          value="right"
           id="rightButton"
-          src={navRight}
+          src="/symbols/nav_right.svg"
           alt="Right button for slideshow"
           onMouseDown={() => handleMouseDown("right")}
           onMouseUp={mouseRelease}

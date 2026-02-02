@@ -1,12 +1,14 @@
-import smallAvatar from "../../Assets/images/pictures/small_Avatar.jpg";
-import { instagram, twitter, youtube } from "../../Assets/images/symbols/";
-import "../../Assets/styles/pages/aboutMe.scss";
+import "@/styles/pages/aboutMe.scss";
 
-const AboutMe = () => {
+interface AboutMeProps {
+  theme?: string;
+}
+
+const AboutMe: React.FC<AboutMeProps> = () => {
   return (
     <>
       <div className="aboutMePageWeb page">
-        <img className="avatar" src={smallAvatar} alt="smallAvatar" />
+        <img className="avatar" src="/images/small_Avatar.jpg" alt="smallAvatar" />
         <div className="aboutMePage_content">
           <div className="aboutMePage_text">
             <p className="aboutMePage_title">
@@ -33,18 +35,18 @@ const AboutMe = () => {
           <div className="socialLinks">
             <img
               className="socialLink_item"
-              src={instagram}
+              src="/symbols/instagram.svg"
               alt="instagram logo"
             />
-            <img className="socialLink_item" src={twitter} alt="twitter logo" />
-            <img className="socialLink_item" src={youtube} alt="youtube logo" />
+            <img className="socialLink_item" src="/symbols/twitter.svg" alt="twitter logo" />
+            <img className="socialLink_item" src="/symbols/youtube.svg" alt="youtube logo" />
           </div>
         </div>
       </div>
       {/* Mobile version */}
       <div className="aboutMePageMobile">
         <div className="aboutMePage_header">
-          <img className="avatar" src={smallAvatar} alt="smallAvatar" />
+          <img className="avatar" src="/images/small_Avatar.jpg" alt="smallAvatar" />
           <p className="aboutMePage_title">
             Hey! I'm <br />
             <b>Marta Nosowka.</b>
@@ -77,11 +79,11 @@ const AboutMe = () => {
           <div className="socialLinks">
             <img
               className="socialLink_item"
-              src={instagram}
+              src="/symbols/instagram.svg"
               alt="instagram logo"
             />
-            <img className="socialLink_item" src={twitter} alt="twitter logo" />
-            <img className="socialLink_item" src={youtube} alt="youtube logo" />
+            <img className="socialLink_item" src="/symbols/twitter.svg" alt="twitter logo" />
+            <img className="socialLink_item" src="/symbols/youtube.svg" alt="youtube logo" />
           </div>
         </div>
       </div>

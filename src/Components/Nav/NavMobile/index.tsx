@@ -1,10 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import ThemeSwitch from "../../ThemeSwitch";
-import { twitter, instagram, youtube } from "../../../Assets/images/symbols";
-import { MenuClose, MenuOpen } from "../../../Assets/images/symbols";
-import "../../../Assets/styles/components/mobileMenu.scss";
+import ThemeSwitch from "@/Components/ThemeSwitch";
+import "@/styles/components/mobileMenu.scss";
 
-const NavMobile = ({ theme, setTheme }) => {
+export default function NavMobile() {
   const currentPath = useLocation().pathname;
 
   const handleDisplayPath = () => {
@@ -31,6 +29,7 @@ const NavMobile = ({ theme, setTheme }) => {
       return;
     }
   };
+  
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(".route_item");
     navItems.forEach((item) => {
@@ -39,23 +38,23 @@ const NavMobile = ({ theme, setTheme }) => {
         item.classList.add("active");
       });
     });
-    document.querySelector(".overlay-content").classList.remove("active");
+    document.querySelector(".overlay-content")?.classList.remove("active");
   };
 
   const toggleSubMenu = () => {
     const subMenu = document.querySelector(".overlay-content__subMenu");
-    subMenu.classList.toggle("active");
+    subMenu?.classList.toggle("active");
     document
       .querySelector(".overlay-content__menu_item:nth-child(4)")
-      .classList.toggle("topUnderLine");
+      ?.classList.toggle("topUnderLine");
   };
 
   return (
     <>
       <div className="overlay-content">
         <div className="overlay-content_header">
-          <ThemeSwitch theme={theme} setTheme={setTheme} />
-          <MenuOpen theme={theme} />
+          <ThemeSwitch />
+          <img src="/symbols/menu_open.svg" alt="Close menu" />
         </div>
         <div className="overlay-content__menu">
           <h1 className="overlay-content_title">Menu</h1>
@@ -91,17 +90,17 @@ const NavMobile = ({ theme, setTheme }) => {
         <div className="overlay-content__social">
           <img
             className="overlay-content__social_item"
-            src={instagram}
+            src="/symbols/instagram.svg"
             alt="instagram logo"
           />
           <img
             className="overlay-content__social_item"
-            src={twitter}
+            src="/symbols/twitter.svg"
             alt="twitter logo"
           />
           <img
             className="overlay-content__social_item"
-            src={youtube}
+            src="/symbols/youtube.svg"
             alt="youtube logo"
           />
         </div>
@@ -109,7 +108,7 @@ const NavMobile = ({ theme, setTheme }) => {
       <div className="nav_Mobile">
         <div className="nav_Mobile_header">
           <h1 className="nav_Mobile_header_title">Marta Nosowka.</h1>
-          <MenuClose theme={theme} />
+          <img src="/symbols/menu_close.svg" alt="Open menu" />
         </div>
         <div className="nav_Mobile_header_path">{handleDisplayPath()}</div>
       </div>
@@ -117,4 +116,3 @@ const NavMobile = ({ theme, setTheme }) => {
   );
 };
 
-export default NavMobile;
