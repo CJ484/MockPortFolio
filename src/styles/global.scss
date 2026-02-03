@@ -24,7 +24,7 @@ body {
         width: 100vw;
     }
 
-    .currentPage {
+    .pagesContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -32,6 +32,7 @@ body {
         position: relative;
         width: 100%;
         height: 100%;
+        border-radius: 0.5em;
         overflow: auto;
     }
 }

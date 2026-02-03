@@ -5,11 +5,6 @@ import routes from "@/const/routes";
 import "@/styles/global.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// TODO : Add breadcrumb
-// TODO : add two separate slideshows for the different projects
-
-type Theme = 'light' | 'dark';
-
 export default function Layout() {
   
   return (
@@ -17,7 +12,7 @@ export default function Layout() {
       <NavDesktop />
       <NavMobile />
 
-      <div className="currentPage">
+      <main className="pagesContainer">
         <Routes>
           {Object.values(routes).map((route) => (
             <Route
@@ -29,7 +24,7 @@ export default function Layout() {
             />
           ))}
         </Routes>
-      </div>
+      </main>
     </div>
   );
 }
