@@ -1,42 +1,73 @@
 .contactPage {
-    margin: 0 26.7%;
     background-color: var(--card-color);
     display: flex;
+    gap: var(--spacing1);
     padding: var(--spacing1);
     color: var(--font-color);
-    width: 100%;
-    height: 100%;
-    max-width: 639px;
-    max-height: 215px;
     border-radius: 8px;
     box-shadow: 0px 2px 20px 0px rgba(0, 38, 72, 0.25);
-    @media (max-width: 425px) {
-        display: none;
+    @media (max-width: 650px) {
+        flex-direction: column;
+        width: 98%;
+        min-height: 80vh;
     }
     
-    .avatarImg {
+    &__avatar {
         border-radius: 50%;
-        margin-right: var(--spacing1);
         max-width: 114px;
         max-height: 114px;
         aspect-ratio: 1/1;
-    }
-
-    .contact_header {
-        font-weight: 300;
-        font-size: 1.25rem;
-        margin: 0;
-    }
-
-    .contact_primary {
-        margin: var(--spacing1) 0;
-        :nth-child(1) {
-            margin-bottom: var(--spacing2);
+        @media (max-width: 650px) {
+            display: none;
         }
-        .contact_primary_item {
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing1);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing2);
+        &__avatar {
+            border-radius: 50%;
+            max-width: 114px;
+            max-height: 114px;
+            @media (min-width: 650px) {
+                display: none;
+            }
+        }
+        &__title {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin: 0;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--font-color);
+            }
+        }
+    }
+
+    &__contactInfo {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing2);
+        &__item {
             display: flex;
-            svg {
-                margin: 0 calc(var(--spacing3) * 2) 0 0;
+            align-items: center;
+            gap: var(--spacing2);
+            &__icon {
+                width: 24px;
+                height: 24px;
             }
             p {
                 font-size: 1rem;
@@ -46,113 +77,29 @@
         }
     }
 
-    .contact_social {
+    &__social {
         display: flex;
-        :nth-child(2) {
-            margin: 0 var(--spacing1);
+        gap: var(--spacing2);
+        @media (max-width: 650px) {
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .contact_social_item {
+        &__item {
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: var(--spacing2);
             color: var(--link-colors);
-            img {
-                margin-right: calc(var(--spacing3) * 2);
+            svg {
+                width: 24px;
+                height: 24px;
             }
-            p {
+            span {
                 font-size: 1rem;
                 font-weight: 400;
                 margin: 0;
             }
         }
     }
-
-}
-
-.contactPageMobile {
-        display: flex;
-        flex-direction: column;
-        background-color: #fff;
-        border-radius: 8px;
-        margin: 0 24px;
-        padding: var(--spacing1);
-        color: var(--font-color);
-        width: 100%;
-        height: 100%;
-        max-width: 328px;
-        max-height: 503px;
-        border-radius: 8px;
-        box-shadow: 0px 2px 20px 0px rgba(0, 38, 72, 0.25);
-        @media (min-width: 425px) {
-            display: none;
-        }
-        .contactMobile_header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            .avatarImg {
-                border-radius: 50%;
-                margin-right: var(--spacing1);
-                max-width: 96px;
-                max-height: 96px;
-            }
-            .contactMobile_title {
-                position: relative;
-                font-weight: 300;
-                font-size: 1.25rem;
-                margin: 0;
-                &::after {
-                    content: "";
-                    position: absolute;
-                    bottom: -2px;
-                    left: 0;
-                    width: 100%;
-                    height: 0.5px;
-                    background-color: var(--font-color);
-                }
-            }
-
-            
-        }
-
-        .contactMobile_primary {
-            margin: var(--spacing1) 0;
-            :nth-child(1) {
-                margin-bottom: var(--spacing1);
-            }
-            .contactMobile_primary_item {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                svg {
-                    margin: 0 calc(var(--spacing3) * 2) 0 0;
-                }
-                p {
-                    font-size: 1rem;
-                    font-weight: 300;
-                    margin: 0;
-                }
-            
-            }
-        }
-        .contactMobile_social {
-            :nth-child(2) {
-                margin: var(--spacing1) 0;
-            }
-            .contactMobile_social_item {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                color: var(--link-colors);
-                img {
-                    margin-right: calc(var(--spacing3) * 2);
-                }
-                p {
-                    font-size: 1rem;
-                    font-weight: 400;
-                    margin: 0;
-                }
-            }
-        }
 
 }
