@@ -1,15 +1,10 @@
-import { Home, AboutMe, Contact, Portfolio } from "@/pages";
+import { AboutMe, Contact, Portfolio } from "@/pages";
 import { portfolioImagesWeb, DwieSiostryWeb, PrzekrojWeb, portfolioImagesMobile, DwieSiostryMobile, PrzekrojMobile }
   from "@/const/imageArrays";
 
 const routes = {
   home: {
     path: "/",
-    element: <Home />,
-    exact: true,
-  },
-  about: {
-    path: "/about",
     element: <AboutMe />,
     exact: true,
   },
