@@ -1,19 +1,23 @@
-import '@/styles/components/ThemeSwitch.scss';
+import { useDarkMode } from 'usehooks-ts';
+import { Sun, Moon } from '@public/symbols';
+import './ThemeSwitch.scss';
 
 export default function ThemeSwitch() {
-  // const toggleTheme = () => {
-  //   setTheme(theme === 'light' ? 'dark' : 'light');
-  //   document.querySelector(".App")?.classList.toggle('darkMode');
-  // };
+  const { isDarkMode, toggle } = useDarkMode();
+
+  const handleToggle = () => {
+    toggle();
+    document.documentElement.classList.toggle('darkMode');
+  };
 
   return (
     <div className="themeSwitch">
-      <img src="/symbols/sun.svg" alt="Light mode" />
-      <div className="switch">
-        <input type="checkbox" id="switch" checked={true} readOnly />
-        <span className="slider round"></span>
+      <Sun className="themeSwitch__icon" />
+      <div className="themeSwitch__switch">
+        <input className="themeSwitch__switch__toggle" type="checkbox" checked={isDarkMode} onClick={handleToggle} />
+        <span className="themeSwitch__switch__slider"></span>
       </div>
-      <img src="/symbols/moon.svg" alt="Dark mode" />
+      <Moon className="themeSwitch__icon" />
     </div>
   );
 };
