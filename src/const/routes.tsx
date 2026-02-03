@@ -1,11 +1,6 @@
 import { Home, AboutMe, Contact, Portfolio } from "@/pages";
-import { portfolioImagesWeb, DwieSiostryWeb, PrzekrojWeb }
-  from "@public/images/illustrationWeb";
-import {
-  portfolioImagesMobile,
-  DwieSiostryMobile, PrzekrojMobile
-}
-  from "@public/images/illustrationMobile";
+import { portfolioImagesWeb, DwieSiostryWeb, PrzekrojWeb, portfolioImagesMobile, DwieSiostryMobile, PrzekrojMobile }
+  from "@/const/imageArrays";
 
 const routes = {
   home: {
