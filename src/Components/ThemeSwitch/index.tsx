@@ -1,5 +1,5 @@
 import { useDarkMode } from 'usehooks-ts';
-import { Sun, Moon } from '@public/symbols';
+import { Sun, Moon } from '@/assets/symbols';
 import './ThemeSwitch.scss';
 
 export default function ThemeSwitch() {

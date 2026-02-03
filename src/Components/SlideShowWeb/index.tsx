@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { NavLeft, NavRight } from '@/assets/symbols';
 import "@/styles/pages/portfolioWeb.scss";
 
 interface SlideShowWebProps {
@@ -73,11 +74,9 @@ const SlideShowWeb: React.FC<SlideShowWebProps> = ({ photos }) => {
   return (
     <div className="portfolioPageWeb">
       {scrollPositionStart ? null : (
-        <img
+        <NavLeft
           className="slideShowButton left"
           id="leftButton"
-          src="/symbols/nav_left.svg"
-          alt="Left button for slideshow"
           onMouseDown={() => handleMouseDown("left")}
           onMouseUp={mouseRelease}
         />
@@ -93,11 +92,9 @@ const SlideShowWeb: React.FC<SlideShowWebProps> = ({ photos }) => {
       </div>
 
       {scrollPositionEnd ? null : (
-        <img
+        <NavRight
           className="slideShowButton right"
           id="rightButton"
-          src="/symbols/nav_right.svg"
-          alt="Right button for slideshow"
           onMouseDown={() => handleMouseDown("right")}
           onMouseUp={mouseRelease}
         />
