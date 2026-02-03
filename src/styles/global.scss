@@ -9,6 +9,7 @@ body {
 }
 
 .layout {
+    padding: var(--spacing2);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -22,54 +23,7 @@ body {
         overflow: hidden;
         width: 100vw;
     }
-    &.darkMode {
-        background: var(--background-color);
-        color: var(--primary-color);
-        .nav_desktop,
-        .nav_Mobile,
-        .overlay-content {
-            background: var(--background-color);
-            color: var(--primary-color);
-            .overlay-content__subMenu_item:first-child {
-                border-color: var(--primary-color);
-            }
-            * {
-                color: var(--primary-color) !important;
-                border-color: var(--primary-color);
-                &::before {
-                    background-color: var(--primary-color) !important;
-                    color: var(--primary-color) !important;
-                }
-                &::after {
-                    background-color: var(--primary-color) !important;
-                    color: var(--primary-color) !important;
-                }
-            }
-        }
-        .page {
-            #socialLink {
-                color: var(--link-colors) !important;
-            }
-            background: var(--card-color);
-            color: var(--primary-color);
-            * {
-                color: var(--primary-color);
-            }
-        }
-        .homePage {
-            h1 {
-                color: var(--primary-color);
-            }
-        }
-        .imageSlideShow {
-            &::-webkit-scrollbar {
-                border-color: var(--primary-color);
-            }
-            &::-webkit-scrollbar-thumb {
-                background-color: var(--primary-color);
-            }
-        }
-    }
+
     .currentPage {
         display: flex;
         flex-direction: column;
