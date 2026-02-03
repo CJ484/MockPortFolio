@@ -1,5 +1,9 @@
 @use "./variables.scss" as *;
 
+* {
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
 body {
     overflow-x: hidden;
 }
