@@ -1,0 +1,17 @@
+export { default as Instagram } from '@public/symbols/Instagram.svg?react';
+export { default as Youtube } from '@public/symbols/youtube.svg?react';
+export { default as Twitter } from '@public/symbols/twitter.svg?react';
+export { default as Mail } from '@public/symbols/Mail.svg?react';
+export { default as Phone } from '@public/symbols/Phone.svg?react';
+export { default as NavLeft } from '@public/symbols/nav_left.svg?react';
+export { default as NavRight } from '@public/symbols/nav_right.svg?react';
+export { default as NavUp } from '@public/symbols/nav_up.svg?react';
+export { default as LightUp } from '@public/symbols/light_Up.svg';
+export { default as LightLeft } from '@public/symbols/light_Left.svg?react';
+export { default as LightRight } from '@public/symbols/light_right.svg?react';
+export { default as LightDown } from '@public/symbols/LightDown.svg?react';
+export { default as Sun } from '@public/symbols/sun.svg?react';
+export { default as Moon } from '@public/symbols/moon.svg?react';
+export { default as MenuOpen } from '@public/symbols/MenuOpen.svg?react';
+export { default as MenuClose } from '@public/symbols/MenuClosed.svg?react';
+export { default as Circle } from '@public/symbols/Circle.svg?react';
