@@ -10,17 +10,17 @@ const routes = {
   },
   portfolio: {
     path: "/portfolio",
-    element: <Portfolio mobileImages={portfolioImagesMobile} webImages={portfolioImagesWeb} />,
+    element: <Portfolio images={portfolioImagesMobile} />,
     exact: true,
   },
   DwieSiostry: {
     path: "/portfolio/DwieSiostry",
-    element: <Portfolio mobileImages={DwieSiostryMobile} webImages={DwieSiostryWeb} />,
+    element: <Portfolio images={DwieSiostryMobile} />,
     exact: true,
   },
   Przekroj: {
     path: "/portfolio/Przekroj",
-    element: <Portfolio mobileImages={PrzekrojMobile} webImages={PrzekrojWeb} />,
+    element: <Portfolio images={PrzekrojMobile} />,
     exact: true,
   },
   contact: {

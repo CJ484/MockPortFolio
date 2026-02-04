@@ -1,9 +1,15 @@
-import { useMediaQuery } from "usehooks-ts";
-import { SlideShowWeb, SlideShowMobile } from "@/Components";
+import { Suspense } from "react";
+import { Loading, SlideShow } from "@/Components"
+import "@/styles/pages/portfolio.scss"
 
-export default function Portfolio({ mobileImages, webImages }: { mobileImages: string[], webImages: string[] }) {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const photos = isMobile ? mobileImages : webImages;
-  
-  return isMobile ? <SlideShowMobile photos={photos}/> : <SlideShowWeb photos={photos}/>;
+export default function Portfolio({ images }: { images: string[] }) {
+
+    return (
+        <Suspense fallback={<Loading />}>
+            <div className="portfolioPage">
+                <SlideShow photos={images} />
+            </div>
+        </Suspense>
+    );
+
 };
