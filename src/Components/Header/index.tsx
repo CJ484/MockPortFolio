@@ -1,8 +1,8 @@
 import { useWindowSize } from 'usehooks-ts';
 import { NavDesktop, NavMobile } from '@/Components';
-import "./Header.scss";
 import PathName from '../PathName';
 import ThemeSwitch from '../ThemeSwitch';
+import "./header.scss";
 
 export default function Header() {
   const { width } = useWindowSize();
