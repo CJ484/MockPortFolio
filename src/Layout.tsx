@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Loading, NavDesktop, NavMobile } from "./Components";
+import { Loading, Header } from "./Components";
 import routes from "@/const/routes";
 import "@/styles/global.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,8 +9,7 @@ export default function Layout() {
   
   return (
     <div className="layout">
-      <NavDesktop />
-      <NavMobile />
+      <Header />
 
       <main className="pagesContainer">
         <Routes>

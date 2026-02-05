@@ -1,0 +1,142 @@
+.navMobile {
+  &__menuButton {
+    width: 24px;
+    height: 24px;
+    color: var(--font-color);
+    cursor: pointer;
+  }
+  &__overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 24px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
+    &.active {
+      transform: translateX(0);
+    }
+
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__menuButton {
+      width: 24px;
+      height: 24px;
+      color: var(--font-color);
+      cursor: pointer;
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      margin: 56px 0;
+      width: 100%;
+      max-width: 68%;
+      &__title {
+        width: 100%;
+        padding-left: var(--spacing2);
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--font-color);
+        text-decoration: none;
+        margin: 0;
+
+        border-bottom: 0.5px solid var(--font-color);
+      }
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      &__link,
+      &__subMenu__link {
+        cursor: pointer;
+        width: 100%;
+        margin: 0;
+        font-weight: 300;
+        font-size: 1.125rem;
+        color: var(--font-color);
+        text-decoration: none;
+        padding: var(--spacing2) 0 var(--spacing2) var(--spacing2);
+        &.active {
+          font-weight: 400;
+          position: relative;
+          &::before {
+            content: "\2022";
+            font-size: 10px;
+            position: absolute;
+            width: 0;
+            color: var(--font-color);
+            background-color: var(--font-color);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      &__link {
+        width: 100%;
+        border-bottom: 0.5px solid var(--font-color);
+        &.active {
+          a {
+            font-weight: 400 !important;
+            position: relative;
+            &::before {
+              content: "\2022";
+              font-size: 10px;
+              position: absolute;
+              width: 0;
+              color: var(--font-color);
+              background-color: var(--font-color);
+              left: -1px;
+              top: 25%;
+            }
+          }
+        }
+      }
+      &__subMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-left: var(--spacing2);
+        &__link:first-child {
+          border-bottom: 0.5px solid var(--font-color);
+        }
+      }
+    }
+    &__social {
+      margin-top: var(--spacing1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 32px;
+      &__item {
+        width: 24px;
+        height: 24px;
+        color: var(--font-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.topUnderLine {
+  border-top: 0.5px solid var(--font-color);
+}

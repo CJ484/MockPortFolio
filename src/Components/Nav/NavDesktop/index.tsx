@@ -1,41 +1,24 @@
-import { Link, useLocation } from "react-router-dom";
-import ThemeSwitch from '@/Components/ThemeSwitch';
-import "@/styles/components/Nav.scss";
+
+import { Link } from "react-router-dom";
+import { LightDown } from '@/assets/symbols';
+import "./NavDesktop.scss";
 
 export default function NavDesktop() {
-  const currentPath = useLocation().pathname;
-
-  const handleDisplayPath = () => {
-    if (currentPath === "/") {
-      return <h1><b>Marta Nosowka.</b></h1>;
-    } else if (currentPath === "/about") {
-      return <h1>Marta Nosowka. / <b>About</b></h1>;
-    } else if (currentPath === "/portfolio") {
-      return <h1>Marta Nosowka. / Portfolio / <b>All works</b></h1>; 
-    } else if (currentPath === "/contact") {
-      return <h1>Marta Nosowka. / <b>Contact</b></h1>;
-    } else if (currentPath === "/portfolio/DwieSiostry") {
-      return <h1>Marta Nosowka. / Porfolio / <b>Dwie Siostry</b></h1>;
-    } else if (currentPath === "/portfolio/Przekroj") {
-      return <h1>Marta Nosowka. / Portfolio / <b>Przekroj</b></h1>;
-    }
-  };
-
   const handleMenu = () => {
-    document.querySelector(".menu_button")?.classList.toggle("active");
-    document.querySelector(".nav_desktop_menu")?.classList.toggle("active");
+    document.querySelector(".navDesktop__menuButton")?.classList.toggle("active");
+    document.querySelector(".navDesktop__menu")?.classList.toggle("active");
   };
 
   const handleSubMenu = () => {
-    const lastRouteItem = document.querySelector(".route_item:nth-child(4)");
+    const lastRouteItem = document.querySelector(".navDesktop__menu__item:nth-child(4)");
     lastRouteItem?.classList.toggle("topUnderLine");
-    document.querySelector(".subMenu_title")?.classList.toggle("active");
-    document.querySelector(".subMenu_projects")?.classList.toggle("active");
+    document.querySelector(".navDesktop__menu__subMenuTitle")?.classList.toggle("active");
+    document.querySelector(".navDesktop__menu__subMenuProjects")?.classList.toggle("active");
   };
 
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(
-      ".route_item, .subMenu_projects_item"
+      ".navDesktop__menu__item, .navDesktop__menu__subMenuProjects__item"
     );
     navItems.forEach((item) => {
       item.addEventListener("click", () => {
@@ -43,16 +26,7 @@ export default function NavDesktop() {
         item.classList.add("active");
       });
     });
-  };
-
-  const resetMenu = () => {
-    document.querySelectorAll(".route_item").forEach((item) => {
-      item.classList.remove("active");
-    });
-    document.querySelector(".menu_button")?.classList.remove("active");
-    document.querySelector(".nav_desktop_menu")?.classList.remove("active");
-    document.querySelector(".subMenu_title")?.classList.remove("active");
-    document.querySelector(".subMenu_projects")?.classList.remove("active");
+    handleMenu();
   };
 
   const subMenuList = {
@@ -73,46 +47,38 @@ export default function NavDesktop() {
   };
 
   return (
-    <div className="nav_desktop">
-      <div>
-      <h1 className="nav_desktop_title">
-        <Link to="/" onClick={resetMenu}>{handleDisplayPath()}</Link>
-      </h1>
-
-      <div className="menu_button underLine" onClick={handleMenu}>
-        <h1>Menu</h1>
-        <img src="/symbols/LightDown.svg" alt="Toggle menu" />
-      </div>
-
-      <div className="nav_desktop_menu">
-        <div className="route_item" >
-          <Link to="/about" onClick={activeMenuItem}>About</Link>
+    <div className="navDesktop">
+      <div className="navDesktop__content">
+        <div className="navDesktop__menuButton" onClick={handleMenu}>
+          <span>Menu</span>
+          <LightDown className="navDesktop__menu__icon" />
         </div>
+        <div className="navDesktop__menu">
+          <div className="navDesktop__menu__item" >
+            <Link className="route_item_link" to="/" onClick={activeMenuItem}>About</Link>
+          </div>
 
-        <div className="subMenu_title menu_button" onClick={handleSubMenu}>
-          <h1>Portfolio</h1>
-          <img src="/symbols/LightDown.svg" alt="Toggle submenu" />
-        </div>
+          <div className="navDesktop__menu__subMenuTitle" onClick={handleSubMenu}>
+            <span>Portfolio</span>
+            <LightDown className="navDesktop__menu__icon" />
+          </div>
 
-        <div className="subMenu_projects">
-          {subMenuList.projects.map((item, index) => (
-            <div
-              key={index}
-              className="subMenu_projects_item route_item"
+          <div className="navDesktop__menu__subMenuProjects">
+            {subMenuList.projects.map((item, index) => (
+              <div
+                key={index}
+                className="navDesktop__menu__item"
+              >
+                <Link onClick={activeMenuItem} to={item.path}>{item.name}</Link>
+              </div>
+            ))}
+          </div>
 
-            >
-              <Link onClick={activeMenuItem} to={item.path}>{item.name}</Link>
-            </div>
-          ))}
-        </div>
-
-        <div className="route_item" >
-          <Link onClick={activeMenuItem} to="/contact">Contact</Link>
+          <div className="navDesktop__menu__item" >
+            <Link onClick={activeMenuItem} to="/contact">Contact</Link>
+          </div>
         </div>
       </div>
-
-      </div>
-      <ThemeSwitch />
     </div>
   );
 };

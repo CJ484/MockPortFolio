@@ -1,35 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ThemeSwitch from "@/Components/ThemeSwitch";
-import "@/styles/components/mobileMenu.scss";
+import { MenuOpen, MenuClose, Instagram, Twitter, Youtube } from '@/assets/symbols';
+import "./NavMobile.scss";
 
 export default function NavMobile() {
-  const currentPath = useLocation().pathname;
-
-  const handleDisplayPath = () => {
-    console.log(currentPath);
-   if (currentPath === "/portfolio") {
-      return (
-        <h1>
-          / Portfolio / <b>All works</b>
-        </h1>
-      );
-    } else if (currentPath === "/portfolio/Przekroj") {
-      return (
-        <h1>
-          / Portfolio / <b>Przekroj</b>
-        </h1>
-      );
-      } else if (currentPath === "/portfolio/DwieSiostry") {
-      return (
-        <h1>
-          / Porfolio / <b>Dwie Siostry</b>
-        </h1>
-      );
-    } else {
-      return;
-    }
+  const toggleMenu = () => {
+    document.querySelector(".navMobile__overlay")?.classList.toggle("active");
   };
-  
+
   const activeMenuItem = () => {
     const navItems = document.querySelectorAll(".route_item");
     navItems.forEach((item) => {
@@ -38,81 +16,42 @@ export default function NavMobile() {
         item.classList.add("active");
       });
     });
-    document.querySelector(".overlay-content")?.classList.remove("active");
-  };
-
-  const toggleSubMenu = () => {
-    const subMenu = document.querySelector(".overlay-content__subMenu");
-    subMenu?.classList.toggle("active");
-    document
-      .querySelector(".overlay-content__menu_item:nth-child(4)")
-      ?.classList.toggle("topUnderLine");
+    toggleMenu();
   };
 
   return (
-    <>
-      <div className="overlay-content">
-        <div className="overlay-content_header">
+    <div className="navMobile">
+      <MenuClose onClick={toggleMenu} className="navMobile__menuButton" />
+      <div className="navMobile__overlay">
+        <div className="navMobile__overlay__header">
           <ThemeSwitch />
-          <img src="/symbols/menu_open.svg" alt="Close menu" />
+          <MenuOpen onClick={toggleMenu} className="navMobile__overlay__menuButton" />
         </div>
-        <div className="overlay-content__menu">
-          <h1 className="overlay-content_title">Menu</h1>
-          <div className="overlay-content_nav">
-            <div className="overlay-content__menu_item route_item">
-              <Link onClick={activeMenuItem} to="/about">
-                About
+        <div className="navMobile__overlay__menu">
+          <span className="navMobile__overlay__menu__title">Menu</span>
+          <div className="navMobile__overlay__nav">
+            <Link className="navMobile__overlay__nav__link route_item" to="/" onClick={activeMenuItem}>About Me</Link>
+            <Link className="navMobile__overlay__nav__link route_item" to="/portfolio" onClick={activeMenuItem}>Portfolio</Link>
+            <div className="navMobile__overlay__nav__subMenu">
+              <Link className="navMobile__overlay__nav__subMenu__link route_item" onClick={activeMenuItem} to="/portfolio/DwieSiostry">
+                Dwie Siostry
+              </Link>
+              <Link className="navMobile__overlay__nav__subMenu__link route_item" onClick={activeMenuItem} to="/portfolio/Przekroj">
+                Prezkroj
               </Link>
             </div>
-            <div className="overlay-content__menu_item route_item">
-                <Link to="/portfolio" onClick={() => {activeMenuItem(); toggleSubMenu();}}>Portfolio</Link>
-
-            </div>
-            <div className="overlay-content__subMenu">
-              <div className="overlay-content__subMenu_item route_item">
-                <Link onClick={activeMenuItem} to="/portfolio/DwieSiostry">
-                  Dwie Siostry
-                </Link>
-              </div>
-              <div className="overlay-content__subMenu_item route_item">
-                <Link onClick={activeMenuItem} to="/portfolio/Przekroj">
-                  Prezkroj
-                </Link>
-              </div>
-            </div>
-            <div className="overlay-content__menu_item route_item">
-              <Link onClick={activeMenuItem} to="/contact">
-                Contact
-              </Link>
-            </div>
+            <Link className="navMobile__overlay__nav__link route_item topUnderLine" onClick={activeMenuItem} to="/contact">
+              Contact
+            </Link>
           </div>
         </div>
-        <div className="overlay-content__social">
-          <img
-            className="overlay-content__social_item"
-            src="/symbols/instagram.svg"
-            alt="instagram logo"
-          />
-          <img
-            className="overlay-content__social_item"
-            src="/symbols/twitter.svg"
-            alt="twitter logo"
-          />
-          <img
-            className="overlay-content__social_item"
-            src="/symbols/youtube.svg"
-            alt="youtube logo"
-          />
+        <div className="navMobile__overlay__social">
+          <Instagram className="navMobile__overlay__social__item" />
+          <Twitter className="navMobile__overlay__social__item" />
+          <Youtube className="navMobile__overlay__social__item" />
         </div>
       </div>
-      <div className="nav_Mobile">
-        <div className="nav_Mobile_header">
-          <h1 className="nav_Mobile_header_title">Marta Nosowka.</h1>
-          <img src="/symbols/menu_close.svg" alt="Open menu" />
-        </div>
-        <div className="nav_Mobile_header_path">{handleDisplayPath()}</div>
-      </div>
-    </>
+    </div>
   );
 };
 
